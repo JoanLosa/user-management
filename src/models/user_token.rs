@@ -37,7 +37,7 @@ impl UserToken {
 
         debug!("Token Max Age: {}", max_age);
 
-        let now = Utc::now().timestamp_nanos() / 1_000_000_000; // nanosecond -> second
+        let now = Utc::now().timestamp(); // nanosecond -> second
         let payload = UserToken {
             iat: now,
             exp: now + max_age,
